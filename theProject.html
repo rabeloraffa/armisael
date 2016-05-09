@@ -10,6 +10,58 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   
+  <style>
+  ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  </style>
   <body>
     
     <section class="page-header">
@@ -22,38 +74,51 @@
 
     <section class="main-content">
     
-    <h2>
-<a id="the-project" class="anchor" href="#the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Project
-    </h2>
-      
-    <p>We call Smart Bracelet: Armisael, but this is a three piece project. This project is designed to use all the three pieces to compute one part of the system. Check the detailed information on each of the pieces listed below.
-    </p>
-     
-     <hr style="blue">
-     
-     <h3>
-<a id="thesmart-smart-bracelet" class="anchor" href="#the-smart-bracelet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Smart Bracelet
-    </h3> 
-    
-    <p><img src="IMG_6432(copy1).jpg" alt="Bracelet" height="400" width="400" align="left"> <t></t>This section focuses on the breakdown of the Bracelet. Here you will find all the information needed to understand its hardware and software. Please visit <a href="bracelet.html">here</a> for its full details.</p>
-      
-      <hr style="blue">
-      
-    <h3>
-  <a id="the-exoskeleton" class="anchor" href="#the-exoskeleton" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Exoskeleton
-    </h3>
-    
-    <p>This section focuses on the breakdown of the Exoskeleton. Here you will find all the information necessary to understand its hardware and software: from its exact physical measurements to its functionality. Please visit <a href="exoskeleton.html">here</a> for its full details.</p>
-    
-    <hr style="dark blue">
-    
-    <h3>
-  <a id="mobile-application" class="anchor" href="#mobile-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mobile Application
-    </h3>
-    
-    <p><img src="android-phone.jpg" alt="MobileApplication" align="left"> This section focuses on the breakdown of the Mobile Application. Here you will find all the information to understand its software and the implementation. Please visit <a href="mobileApp.html">here</a> for its full details.</p>
-    
-    <hr style="dark blue">
+<body>
+
+<h2>
+<a id="the project" class="anchor" href="#the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Project
+</h2>
+
+<p>We call Smart Bracelet: Armisael, but this is a three piece project. This project is designed to use all the three pieces to compute one part of the system. Check the detailed information on each of the pieces listed below. </p>
+
+<ul class="tab">
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Smart Bracelet')">Smart Bracelet</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Exoskeleton')">Exoskeleton</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'Mobile Application')">Mobile Application</a></li>
+</ul>
+
+<div id="Smart Bracelet" class="tabcontent">
+  <h3>Smart Bracelet</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Exoskeleton" class="tabcontent">
+  <h3>Exoskeleton</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Mobile Application" class="tabcontent">
+  <h3>Mobile Application</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+  
     
 </section>
 </body>
