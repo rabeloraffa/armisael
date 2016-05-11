@@ -123,7 +123,7 @@ ul.tab li a:focus, .active {
   
   <p>The Exoskeleton is designed to correspond accordingly with the bracelet's data. The bracelet process the heart rate data and send it to the mobile application via bluetooth. The exoskeleton receives the data from the mobile application and then its servo motor is activated. Depending what type of data is received the servo will turn certain amount of degrees. If the exoskeleton receives heart rate data that is below the target, then the servo motor rotates in the direction which the spring will increase tension. However, if the exoskeleton receives heart rate data that is above the target, then the servo motor rotates in the direction that relieves tension.</p>
   
-  <p> <img src ="IMG_6473.JPG" alt="exo-box" height="300" widht="300" align="left" style="margin:0px 20px"> The outside look of the exoskeleton is a 9 x 4 in box made of wood. It is going to be located on the posterior side of the leg. On the inside we have the long metal component that conects the spring to the gear, and then we have the second gear with the servo motor on top of it. Our application for the exoskeleton only needs the servo motor to rotate between 0 and 50 degrees. On top of the box we have the Arduino Uno connected to the servo. We chose Arduino Uno to handle the processing of the Exoskeleton's algorithm because Uno can handle one servo motor without any issues and because it can support the BLE processing within the same system. Right next to the Arduino Uno there is the BLE module (a CC2541 HM10 as well) which is used to transfer data between the mobile application and the exoskeleton. Note that there are two structures: one for the left leg and one for the right leg. Therefore, our entire system contians 2 servo motors, 2 BLE modules, 2 Arduino Unos and 4 gears.</p>
+  <p> <img src ="IMG_6473.JPG" alt="exo-box" height="300" width="300" align="left" style="margin:0px 20px"> The outside look of the exoskeleton is a 9 x 4 in box made of wood. It is going to be located on the posterior side of the leg. On the inside we have the long metal component that conects the spring to the gear, and then we have the second gear with the servo motor on top of it. Our application for the exoskeleton only needs the servo motor to rotate between 0 and 50 degrees. On top of the box we have the Arduino Uno connected to the servo. We chose Arduino Uno to handle the processing of the Exoskeleton's algorithm because Uno can handle one servo motor without any issues and because it can support the BLE processing within the same system. Right next to the Arduino Uno there is the BLE module (a CC2541 HM10 as well) which is used to transfer data between the mobile application and the exoskeleton. Note that there are two structures: one for the left leg and one for the right leg. Therefore, our entire system contians 2 servo motors, 2 BLE modules, 2 Arduino Unos and 4 gears.</p>
   
   <p> <img src ="Gears.jpg" alt="gears" height="300" widht="300" align="left" style="margin:0px 20px"> The gears had to be 3D printed because we needed to have good matching and light gears. The servo motor we use is a 15 kg.cm / 208.3 oz.in (at 6V) and 13 kg.cm / 180 oz.in (at 4.8V). This motor provides the necessary torque in order to succesfully compress the spring. Servos with less torque are not good for the spring we are using. In a closer look we can visualize a a bigger gear and a big blue object on top of it. The bigger gear was designed to help the decrease of the needed torque to push the spring. The blue object was 3D printed in order to clip hold on together the spring, gear and the long metal component.</p>
 </div>
@@ -133,17 +133,18 @@ ul.tab li a:focus, .active {
   
   <p>The Mobile Application is designed transfer the data from the bracelet to the exoskeleton & vice-versa and to compute the decision-making of our system based on the heart rate data received by the bracelet.</p>
   
-  <p> <img src ="Screenshot_2016-05-08-14-51-08.png" alt="bleSearch" height="300" widht="300" align="left" style="margin:0px 20px">
-      <img src ="Screenshot_2016-05-08-14-51-33.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
+  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="bleSearch" height="300" width="300" style="margin:0px 20px">
+      <img src ="Screenshot_2016-05-08-14-51-33.png" alt="bleDisplay" height="300" width="300" style="margin:0px 20px">
+  <p> 
   The user end application is only related to searching the Bluetooth modules (three in our system). We are using Single-User Single Input Single Output module of communication connection here. Our BLE modules can only support one pairing at a time, and the Android phone utilized also can only connect to one BLE device at a time. Therefore we use our Android phone to connect to each BLE device automatically at given times, and to display the heart rate data, plus comments, to our user. This structure decrease the speed in which the user uses our device, but it can be considered as a safe precaution as well. The application first connects to the Bracelet's BLE and only then it will switch to the right leg BLE and then o the left leg BLE.
   </p>
 
   <p>
-    <img src ="Flow Chart.png" alt="flowChart" height="300" widht="300" align="left" style="margin:0px 20px">
+    <img src ="Flow Chart.png" alt="flowChart" height="300" width="300" align="left" style="margin:0px 20px">
   The back end application is where all the decision is being computed. Here the application will take the heart rate (in percentage) data and will analyze. If it meets the target range, then the user will not have any feeling of the exoskeleton increasing or decreasing the tension on its legs. However, if the data is outside the target range, then the data being sent to the exoskeleton will activate the servo motors. If the data is below the target range, then the app will display a message to motivate the user to increase speed. This will be done by activating the servo motors on the exoskeleton to rotate a specific degree amount. If the user's data goes above the target range, then a stop/rest message will be displayed. This is done by activating the servo motor to rotate another specific degree amount.
   </p>
   
-  <p><img src ="Flow Chart2.png" alt="flowChart2" height="300" widht="300" align="left" style="margin:0px 20px">
+  <p><img src ="Flow Chart2.png" alt="flowChart2" height="300" width="300" align="left" style="margin:0px 20px">
     The app is built to be the link between the bracelet and the exoskeleton and also to improve the efficiency of each component. 
     </p>
   
@@ -152,7 +153,7 @@ ul.tab li a:focus, .active {
 <div id="Accomplishments" class="tabcontent">
   <h2>Accomplishments</h2>
   
-  <p><img src ="smartBracelet.png" alt="Futuristic Bracelet" height="300" widht="300" align="left" style="margin:0px 20px">
+  <p><img src ="smartBracelet.png" alt="Futuristic Bracelet" height="300" width="300" align="left" style="margin:0px 20px">
     This section we will our comments towards the accomplishments we achieved from what we initially proposed to the School of Engineering of the New York Institute of Technology.
   </p>
  
@@ -160,7 +161,7 @@ ul.tab li a:focus, .active {
    Our first and most important achievement was to fully build and develop the smart bracelet prototype. We made a futuristic design when we first designed the virtual version of the bracelet. Our change was due to we condensed all the necessary components together, plus we designed using a good but not accessable material. We changed to the material we had access too and we left our components more spread. The reason is because since we did not have many spare components we could not focus on making as small as possible. In the end we did have a very comfortable and functional prototype.
  </p>
  
- <img src ="IMG_6457.JPG" alt="Final Prototype" height="300" widht="300" style="margin:0px 20px">
+ <img src ="IMG_6457.JPG" alt="Final Prototype" height="300" width="300" style="margin:0px 20px">
  
  <p>
    Another huge accomplishment was the development of the exoskeleton. We were able to come up with a structure that was feasible to build and would not bother the user. As part of this achievement is the fact that we were able to find spiral springs and servo motors with high torque since most on the market has very little torque (4 lb.in or 4 kg.cm). To be able to find these components really helped to produce it instead of only propose.
