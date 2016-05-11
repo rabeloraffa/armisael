@@ -98,7 +98,7 @@ ul.tab li a:focus, .active {
       <img src="IMG_6432(copy1).jpg" alt="smartBracelet" height="300" width="300" align="left" style="margin: 0px 20px"> The Smart Bracelet is designed to compute the heart rate from the user, send the data to the mobile application, and notify the user of its data.
       </p>
       <p>
-      <img src="adafruit-pro-trinket-3v-12mhz.jpg" alt="ProTrinket" height="100" width="100" align="left" style="margin: 0px 20px"> The Bracelet's heart and mind is the Adafruit Pro Trinket 3V microcontroller. Pro Trinket runs on 12 MHz clock and is enough to process all of our application. Another advantage is the fact that it provides a current output up to 150 mA which is enough for powering the HDC1000, our humidity and temperature sensor. In comparison with regular Trinket or Pro Mini microcontroller, the Pro Trinket provides more pins and its Micro-USB power jack also made a difference for our goals.
+      <img src="adafruit-pro-trinket-3v-12mhz.jpg" alt="ProTrinket" height="200" width="200" align="left" style="margin: 0px 20px"> The Bracelet's heart and mind is the Adafruit Pro Trinket 3V microcontroller. Pro Trinket runs on 12 MHz clock and is enough to process all of our application. Another advantage is the fact that it provides a current output up to 150 mA which is enough for powering the HDC1000, our humidity and temperature sensor. In comparison with regular Trinket or Pro Mini microcontroller, the Pro Trinket provides more pins and its Micro-USB power jack also made a difference for our goals.
       </p>
       <p>
       <img src="Wave Form - HR.jpg" alt="HR" height="300" width="300" align="left" style="margin: 0px 20px"> The chosen Heart Rate sensor is called SON1240 and we chose it because of its accuracy and how it gets the pulse readings. It emits light on the surface of the skin and the light penetrates till the blood cells. At the blood cells level, this light will be reflected by the blood; when the heart does not pulse, the intensity of the reflected light is low, and when the heart pulse, the intesity of the reflected light is high. This sensor has two types of outputs: a square wave and a continuous oscillation wave. The square wave would be the best option, easier to measure and understand, but its main problem is that each reflection is not the same. Which leads to different periods of the square wave and sometimes the refelction is not intense enough to compute as a heart beat. Therefore, we chose to use the output in which gives us a continous wave form, this form computes much more accurate each intensity of each reflection. This way, our algorithm can provide a much more accurate measure of the user's heart rate.
@@ -110,7 +110,7 @@ ul.tab li a:focus, .active {
       <img src="CC2541 HM10.jpg" alt="CC2541" height="300" width="300" align="left" style="margin: 0px 20px"> The Bluetooth module is the CC2541 (also known as HM10). We selected this module because of three reasons: good finance outcome (not expensive), simple to configure and to use, and the most imporant it consumes very low power energy. This module is the new series of Bluetooth 4.0 which are also called BLE - Bluetooth Low Energy consumption.
       </p>
       <p>
-      <img src="IMG_6457.JPG" alt="bracelet2" height="400" width="400" align="left" style="margin: 0px 20px"> The last piece of the Bracelet is the battery. It uses a 3.7V lithium battery smaller than a quarter. The battery powers the Pro Trinket 3V, BLE and the Heart Rate sensor directly. If you take a close look into our design, you will find that there is a section that contains a board divided in two. This board is the extension of our battery. One side there is <b>Vcc</b> (voltage) and the other side is <b>GND</b> (ground). This structure allows us to use female headers to connect all the pins. Therefore is easy to modify any particular component of hardware of our bracelet.
+      <img src="IMG_6452.JPG" alt="bracelet2" height="300" width="300" align="left" style="margin: 0px 20px"> The last piece of the Bracelet is the battery. It uses a 3.7V lithium battery smaller than a quarter. The battery powers the Pro Trinket 3V, BLE and the Heart Rate sensor directly. If you take a close look into our design, you will find that there is a section that contains a board divided in two. This board is the extension of our battery. One side there is <b>Vcc</b> (voltage) and the other side is <b>GND</b> (ground). This structure allows us to use female headers to connect all the pins. Therefore is easy to modify any particular component of hardware of our bracelet.
       </p>
        <p>
       Our bracelet is designed using velcros and pieces of wood. The wood is mainly used as the band of the bracelet: making it comfortable enough to wear and also avoiding any electrical contact to the user. We two types of velctros: long strips of velcros that are used to go around of the wrist to tighten it, and short pieces of velcros that stick in different components on the wood. In overall our bracelet is very simple to understand and if necessary to change or analyze any specific component, it is very easy to disconnect them.
@@ -133,19 +133,22 @@ ul.tab li a:focus, .active {
   
   <p>The Mobile Application is designed transfer the data from the bracelet to the exoskeleton & vice-versa and to compute the decision-making of our system based on the heart rate data received by the bracelet.</p>
   
-  <p><img src ="android-phone.jpg" alt="AndroidPhone" height="300" widht="300" align="left" style="margin:0px 20px"> 
+  <p> 
   The user end application is only related to searching the Bluetooth modules (three in our system). We are using Single-User Single Input Single Output module of communication connection here. Our BLE modules can only support one pairing at a time, and the Android phone utilized also can only connect to one BLE device at a time. Therefore we use our Android phone to connect to each BLE device automatically at given times, and to display the heart rate data, plus comments, to our user. This structure decrease the speed in which the user uses our device, but it can be considered as a safe precaution as well. The application first connects to the Bracelet's BLE and only then it will switch to the right leg BLE and then o the left leg BLE.
+  <img src ="android-phone.jpg" alt="AndroidPhone" height="300" widht="300" align="left" style="margin:0px 20px">
+  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="bleSearch" height="300" widht="300" align="left" style="margin:0px 20px">
+  <img src ="Screenshot_2016-05-08-14-51-33.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
+  </p>
+
+  <p>
+  The back end application is where all the decision is being computed. Here the application will take the heart rate (in percentage) data and will analyze. If it meets the target range, then the user will not have any feeling of the exoskeleton increasing or decreasing the tension on its legs. However, if the data is outside the target range, then the data being sent to the exoskeleton will activate the servo motors. If the data is below the target range, then the app will display a message to motivate the user to increase speed. This will be done by activating the servo motors on the exoskeleton to rotate a specific degree amount. If the user's data goes above the target range, then a stop/rest message will be displayed. This is done by activating the servo motor to rotate another specific degree amount.
+  <img src ="Flow Chart.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
   </p>
   
-    <img src ="Screenshot_2016-05-08-14-51-08.png" alt="bleSearch" height="300" widht="300" align="left" style="margin:0px 20px">
-
-    <img src ="Screenshot_2016-05-08-14-51-33.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px"> 
-  
-  <p><img src ="Flow Chart.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
-  The back end application is where all the decision is being computed. Here the application will take the heart rate (in percentage) data and will analyze. If it meets the target range, then the user will not have any feeling of the exoskeleton increasing or decreasing the tension on its legs. However, if the data is outside the target range, then the data being sent to the exoskeleton will activate the servo motors. If the data is below the target range, then the app will display a message to motivate the user to increase speed. This will be done by activating the servo motors on the exoskeleton to rotate a specific degree amount. If the user's data goes above the target range, then a stop/rest message will be displayed. This is done by activating the servo motor to rotate another specific degree amount.</p>
-  
-  <p><img src ="Flow Chart2.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
-    The app is built to be the link between the bracelet and the exoskeleton and also to improve the efficiency of each component. </p>
+  <p>
+    The app is built to be the link between the bracelet and the exoskeleton and also to improve the efficiency of each component. 
+    <img src ="Flow Chart2.png" alt="bleDisplay" height="300" widht="300" align="left" style="margin:0px 20px">
+    </p>
   
 </div>
 
@@ -156,8 +159,9 @@ ul.tab li a:focus, .active {
     This section we will our comments towards the accomplishments we achieved from what we initially proposed to the School of Engineering of the New York Institute of Technology.
   </p>
  
- <p><img src ="IMG_6457.JPG" alt="Final Prototype" height="300" widht="300" align="left" style="margin:0px 20px">
+ <p>
    Our first and most important achievement was to fully build and develop the smart bracelet prototype. We made a futuristic design when we first designed the virtual version of the bracelet. Our change was due to we condensed all the necessary components together, plus we designed using a good but not accessable material. We changed to the material we had access too and we left our components more spread. The reason is because since we did not have many spare components we could not focus on making as small as possible. In the end we did have a very comfortable and functional prototype.
+  <img src ="IMG_6457.JPG" alt="Final Prototype" height="300" widht="300" align="left" style="margin:0px 20px">
  </p>
  
  <p>
