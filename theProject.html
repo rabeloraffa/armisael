@@ -8,6 +8,14 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style>
+    #teamFureka{
+          background-image: url(teamFureka2.png);
+          background-position: top right;
+          background-repeat: no-repeat;
+          padding: 15px;
+    }
+    </style>
   </head>
   
   <style>
@@ -76,11 +84,13 @@ ul.tab li a:focus, .active {
     
 <body>
 
+    <div id="teamFureka" style="margin 0px -30px">
 <h2>
 <a id="the project" class="anchor" href="#the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Project
 </h2>
 
 <p>We call Smart Bracelet: Armisael, but this is a three piece project. This project is designed to use all the three pieces to compute one part of the system. Check the detailed information on each of the pieces listed below. </p>
+</div>
 
 <ul class="tab">
   <li><a href="#" class="tablinks" onclick="openCity(event, 'Smart Bracelet')">Smart Bracelet</a></li>
@@ -152,7 +162,7 @@ ul.tab li a:focus, .active {
   </p>
   
  
-  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="app" height="300" width="200" align="left" style="margin:0px 20px">
+  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="app" height="300" width="200" align="middle" style="margin:0px 20px">
   <img src ="Screenshot_2016-05-08-14-51-33.png" alt="app2" height="300" width="200" align="right" style="margin:0px 20px">
   <p>
   The user end application is only related to searching the Bluetooth modules (three in our system). We are using Single-User Single Input Single Output module of communication connection here. Our BLE modules can only support one pairing at a time, and the Android phone utilized also can only connect to one BLE device at a time. Therefore we use our Android phone to connect to each BLE device automatically at given times, and to display the heart rate data, plus comments, to our user. This structure decreases the speed in which the user uses our device, but it can be considered as a safe precaution as well. The application first connects to the Bracelet's BLE and only then it will switch to the right leg BLE and then o the left leg BLE.
