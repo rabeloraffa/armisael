@@ -162,7 +162,8 @@ ul.tab li a:focus, .active {
   </p>
   
  
-  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="app" height="300" width="200" align="middle">
+  <img src ="Screenshot_2016-05-08-14-51-08.png" alt="app" height="300" width="200" align="left">
+  <img src ="android-phone.jpg" alt="app3" height="300" width="200" align="center">
   <img src ="Screenshot_2016-05-08-14-51-33.png" alt="app2" height="300" width="200" align="right">
   <p>
   The user end application is only related to searching the Bluetooth modules (three in our system). We are using Single-User Single Input Single Output module of communication connection here. Our BLE modules can only support one pairing at a time, and the Android phone utilized also can only connect to one BLE device at a time. Therefore we use our Android phone to connect to each BLE device automatically at given times, and to display the heart rate data, plus comments, to our user. This structure decreases the speed in which the user uses our device, but it can be considered as a safe precaution as well. The application first connects to the Bracelet's BLE and only then it will switch to the right leg BLE and then o the left leg BLE.
